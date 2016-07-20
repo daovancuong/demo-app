@@ -50,10 +50,11 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.delivery_method = :smtp
   host = "https://cryptic-wave-33853.herokuapp.com"
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'https://cryptic-wave-33853.herokuapp.com' }
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
-      :port                 => 587,
+      :port                 => 25,
       :user_name            => 'daovancuong213@gmail.com',
       :password             => 'Phantichthietke!@#123',
       :authentication       => 'plain',
