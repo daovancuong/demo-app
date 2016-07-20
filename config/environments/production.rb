@@ -82,6 +82,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+
+  config.action_mailer.raise_delivery_errors = true
+
+
   # config/environments/production.rb
   # config.paperclip_defaults = {
   #   storage: :s3,
@@ -92,13 +96,5 @@ Rails.application.configure do
   #     s3_region: ENV.fetch('AWS_REGION'),
   #   }
   # }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      address: 'smtp.mail.com',
-      port: 587,
-      domain: 'https://cryptic-wave-33853.herokuapp.com',
-      user_name: 'dao.van.cuong@framgia.com',
-      password: 'Herokucuong9',
-      authentication: 'plain',
-      enable_starttls_auto: true }
+
 end
