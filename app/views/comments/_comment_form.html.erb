@@ -1,0 +1,18 @@
+
+  <%= form_for(@comment,remote:true) do |f| %>
+      <% if @comment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this @comment from being saved:</h2>
+            <ul>
+              <% @comment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <%= hidden_field_tag :id_mic, @comment.micropost.id %>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      <%= f.submit "Post",class:"btn btn-primary"%>
+  <% end %>
+

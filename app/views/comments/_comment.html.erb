@@ -1,0 +1,6 @@
+<li style="padding-bottom: 10px;">
+  <%= gravatar_for(comment.user, size: 50) %>
+  <%= link_to comment.user.name, comment.user %>
+  <%= comment.created_at.strftime("%T %F") %>
+  <h6><%= comment.content %></h6>
+</li>

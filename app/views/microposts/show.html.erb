@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+
+  <aside class="col-ms-8">
+    <section>
+      <%= render @micropost %>
+    </section>
+    <section>
+      <ul class="microposts">
+        <%= render @comments %>
+      </ul>
+      <%= will_paginate @comments %>
+    </section>
+    <% if !current_user.nil? %>
+        <section >
+          <%= render 'comments/comment_form' %>
+        </section>
+    <% end %>
+  </aside>
+</div>
+
+

@@ -1,0 +1,6 @@
+<%= form_for(Like.find_by(user_id: user_id, micropost_id: micropost_id),
+             html: {method: :delete},
+             remote: true) do |f| %>
+    <%= f.submit "Unlike", class:"btn btn-primary"%>
+<% end %>
+

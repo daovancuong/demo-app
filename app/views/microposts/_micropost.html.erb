@@ -1,0 +1,23 @@
+<li id="micropost-<%= micropost.id %>">
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <h4><%= link_to micropost.title, micropost %></h4>
+  <h5> <%= pluralize(micropost.comments.count, "comments") %></h5>
+  <span class="content"><%= micropost.content %><%= image_tag micropost.picture.url if micropost.picture? %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+  </span>
+  <span><%= pluralize(micropost.likes.count, " likes") %></span>
+  <% if !current_user.nil? %>
+      <% if like?(current_user.id, micropost.id) %>
+          <%= render 'likes/unlike_form', user_id: current_user.id, micropost_id: micropost.id %>
+      <% else %>
+          <%= render 'likes/like_form', micropost: micropost %>
+      <% end %>
+
+  <% end %>
+
+  <% if !current_user.nil? && current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete, data: {confirm: "are you sure"} %>
+  <% end %>
+</li>
