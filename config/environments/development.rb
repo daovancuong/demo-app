@@ -54,7 +54,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'https://cryptic-wave-33853.herokuapp.com' }
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
-      :port                 => 25,
+      :port                 => 587,
       :user_name            => 'daovancuong213@gmail.com',
       :password             => 'Phantichthietke!@#123',
       :authentication       => 'plain',
